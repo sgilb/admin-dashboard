@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 :root {
   --dark-green: #042F2E;
   --french-grey: #c9bfc3;
@@ -9,20 +11,116 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
   display: grid;
-  grid-template: 
-  [row1-start] "sidebar header" 1fr [row1-end]
-  [row2-start] "sidebar cards" auto [row2-end]
-  / 240px auto;
+  grid-template:
+    "sidebar header" 1fr
+    "sidebar cards" auto
+    / 240px auto;
 }
 
 .sidebar {
   grid-area: sidebar;
   background-color: var(--dark-green);
   color: var(--mint-cream);
+}
+
+.sidebar .title {
+  display: grid;
+  grid-template: 36px / 1fr 4fr;
+  gap: 15px;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+.sidebar .logo {
+  background-image: url(../assets/images/view-dashboard.svg);
+  background-size: cover;
+}
+
+.sidebar h1 {
+  margin: 0;
+  align-self: center;
+}
+
+.sidebar .menu ul {
+  list-style: none;
+  padding-left: 32px;
+  margin-top: 50px;
+}
+
+.sidebar .menu ul li {
+  margin-top: 20px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#home::before {
+  content: url(../assets/images/home.svg);
+  display: block;
+  width: 1.9rem;
+  height: auto;
+}
+
+#profile::before {
+  content: url(../assets/images/face-man-profile.svg);
+  display: block;
+  width: 1.9rem;
+  height: auto;
+}
+
+#messages::before {
+  content: url(../assets/images/message.svg);
+  display: block;
+  width: 1.9rem;
+  height: auto;
+}
+
+#history::before {
+  content: url(../assets/images/clock-time-three.svg);
+  display: block;
+  width: 1.9rem;
+  height: auto;
+}
+
+#tasks::before {
+  content: url(../assets/images/note-multiple.svg);
+  display: block;
+  width: 1.9rem;
+  height: auto;
+}
+
+#communities::before {
+  content: url(../assets/images/account-group.svg);
+  display: block;
+  width: 1.9rem;
+  height: auto;
+}
+
+#settings::before {
+  content: url(../assets/images/cog.svg);
+  display: block;
+  width: 1.9rem;
+  height: auto;
+}
+
+#support::before {
+  content: url(../assets/images/help-box.svg);
+  display: block;
+  width: 1.9rem;
+  height: auto;
+}
+
+#privacy::before {
+  content: url(../assets/images/shield-account.svg);
+  display: block;
+  width: 1.9rem;
+  height: auto;
 }
 
 .header {
