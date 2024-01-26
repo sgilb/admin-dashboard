@@ -1,0 +1,48 @@
+:root {
+  --dark-green: #042F2E;
+  --french-grey: #c9bfc3;
+  --mint-cream: #f8fffa;
+  --dark-purple: #422c41;
+  --blue: #5497A7;
+  --black: rgb(17, 17, 17);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template: 
+  [row1-start] "sidebar header" 1fr [row1-end]
+  [row2-start] "sidebar cards" auto [row2-end]
+  / 240px auto;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: var(--dark-green);
+  color: var(--mint-cream);
+}
+
+.header {
+  grid-area: header;
+  background-color: var(--mint-cream);
+  color: var(--black);
+}
+
+.cards {
+  grid-area: cards;
+  background-color: var(--french-grey);
+  color: var(--dark-purple);
+}
+
+.card {
+  background-color: var(--mint-cream);
+  color: var(--black);
+}
+
+button {
+  background-color: var(--blue);
+  border: none;
+}
