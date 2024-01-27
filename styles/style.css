@@ -53,7 +53,7 @@
 }
 
 .sidebar .menu ul li {
-  margin-top: 20px;
+  margin-top: 15px;
   width: 150px;
   display: flex;
   align-items: center;
@@ -127,6 +127,114 @@
   grid-area: header;
   background-color: var(--mint-cream);
   color: var(--black);
+  display: grid;
+  grid-template:
+    "left right" 65px
+    "left right" 65px
+    / 2fr 1fr;
+  padding: 25px 40px;
+}
+
+.left-col {
+  grid-area: left;
+}
+
+.right-col {
+  grid-area: right;
+  justify-self: flex-end;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search::before {
+  content: url(../assets/images/magnify.svg);
+  display: block;
+  width: 1.6rem;
+  flex-shrink: 0;
+  margin-right: 10px;
+  padding-top: 5px;
+}
+
+.search input {
+  background-color: var(--french-grey);
+  border: none;
+  border-radius: 30px;
+  width: clamp(200px, 100%, 600px);
+  padding: 6px 15px;
+  font-size: 0.9rem;
+  color: var(--black);
+}
+
+.greeting {
+  display: flex;
+  padding: 30px 0;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.greeting p {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  flex-shrink: 1;
+  color: var(--black);
+}
+
+.greeting .name {
+  font-size: 1.3rem;
+  font-weight: 1000;
+}
+
+.avatar {
+  margin-right: 20px;
+}
+
+.avatar img {
+  border-radius: 50%;
+  width: 80px;
+}
+
+.top .user {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* gap: 15px; */
+  font-weight: bold;
+  color: var(--black);
+}
+
+.notifications {
+  content: url(../assets/images/bell-ring-outline.svg);
+  display: block;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: 32px;
+}
+
+.top .user .avatar img {
+  border-radius: 50%;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 50px;
+  gap: 15px;
+}
+
+button {
+  background-color: var(--blue);
+  border: none;
+  border-radius: 30px;
+  width: 100px;
+  height: 40px;
+  padding: 6px 15px;
+  color: var(--mint-cream);
 }
 
 .cards {
@@ -138,9 +246,4 @@
 .card {
   background-color: var(--mint-cream);
   color: var(--black);
-}
-
-button {
-  background-color: var(--blue);
-  border: none;
 }
