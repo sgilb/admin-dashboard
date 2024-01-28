@@ -18,14 +18,16 @@
   display: grid;
   grid-template:
     "sidebar header" 1fr
-    "sidebar cards" auto
-    / 240px auto;
+    "sidebar content" auto
+    / 229px auto;
 }
 
 .sidebar {
   grid-area: sidebar;
   background-color: var(--dark-green);
   color: var(--mint-cream);
+  position: fixed;
+  height: 100%;
 }
 
 .sidebar .title {
@@ -237,13 +239,43 @@ button {
   color: var(--mint-cream);
 }
 
-.cards {
-  grid-area: cards;
+.content {
+  grid-area: content;
   background-color: var(--french-grey);
   color: var(--dark-purple);
+  padding: 20px;
+  display: grid;
+  grid-template:
+    "projects announcements" 1fr
+    "projects trending" 1fr
+    / 2fr 1fr;
+  gap: 20px;
 }
 
 .card {
   background-color: var(--mint-cream);
   color: var(--black);
+  padding: 20px;
+  border-radius: 10px;
+  display: grid;
+}
+
+.projects {
+  grid-area: projects;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.announcements {
+  grid-area: announcements;
+}
+
+.trending {
+  grid-area: trending;
 }
