@@ -3,6 +3,8 @@
 :root {
   --dark-green: #042F2E;
   --french-grey: #c9bfc3;
+  --grey: #504b4c;
+  --pink: rgb(142, 108, 113);
   --mint-cream: #f8fffa;
   --dark-purple: #422c41;
   --blue: #5497A7;
@@ -28,6 +30,7 @@
   color: var(--mint-cream);
   position: fixed;
   height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .sidebar .title {
@@ -135,6 +138,7 @@
     "left right" 65px
     / 2fr 1fr;
   padding: 25px 40px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .left-col {
@@ -179,14 +183,14 @@
 }
 
 .greeting p {
-  font-size: 0.9rem;
-  line-height: 1.5rem;
+  /* font-size: 0.9rem; */
+  line-height: 1.6rem;
   flex-shrink: 1;
   color: var(--black);
 }
 
 .greeting .name {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 1000;
 }
 
@@ -258,12 +262,38 @@ button {
   padding: 20px;
   border-radius: 10px;
   display: grid;
+  grid-template-rows: auto 1fr;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.project-cards > .card {
+  grid-template:
+  "title title" auto
+  "description description" 3fr
+  ". actions" 1fr
+  / 2fr 1fr;
+}
+
+.project-cards > .card h3 {
+  grid-area: title;
+}
+
+.card > p {
+  grid-area: description;
+}
+
+.card > .actions {
+  grid-area: actions;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card > p, .announcement > p, .card > .user > p {
+  color: var(--grey);
 }
 
 .projects {
   grid-area: projects;
-  display: grid;
-  grid-template-rows: auto 1fr;
 }
 
 .project-cards {
@@ -278,4 +308,59 @@ button {
 
 .trending {
   grid-area: trending;
+}
+
+.trending > .card {
+  display: grid;
+  grid-template:
+    "profile-pic text" auto
+    / 1fr 1fr;
+  gap: 10px;
+}
+
+.project-name {
+  color: var(--grey);
+}
+
+.trending > .card > .user > .avatar {
+  content: url(../assets/images/profile.jpg);
+  display: block;
+  width: 2rem;
+  height: auto;
+  border-radius: 50%;
+  grid-area: profile-pic;
+}
+
+.project-text {
+  grid-area: text;
+}
+
+span.project-name {
+  color: var(--pink);
+}
+
+h3 {
+  color: var(--pink);
+}
+
+.bookmark {
+  content: url(../assets/images/star-plus-outline.svg);
+  display: block;
+  width: 1.7rem;
+}
+
+.comment {
+  content: url(../assets/images/comment-plus-outline.svg);
+  display: block;
+  width: 1.7rem;
+}
+
+.share {
+    content: url(../assets/images/source-fork.svg);
+    display: block;
+    width: 1.7rem;
+}
+
+.username {
+  color: var(--blue);
 }
